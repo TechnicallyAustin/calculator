@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    border: 1px solid black;
+  margin: 0;
+  border: 1px solid black;
 }
 
 body {
@@ -14,24 +14,37 @@ body {
   background-color: green;
   height: 80vh;
   width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.display-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
+.display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .display {
-    height: 10vh;
-    width: 76vw;
-    background-color: black;
+  height: 10vh;
+  width: 76vw;
+  background-color: black;
 }
 
 .number-container {
-    height: 40vh;
-    width: 20vw;
+  height: 65vh;
+  width: 76vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  column-gap: 9%;
 
+}
+
+.button {
+  height: 12vh;
+  width: 12vw;
 }
