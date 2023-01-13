@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    border: 1px solid black;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  background-color: green;
+  height: 80vh;
+  width: 80vw;
+}
+
+.display-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.display {
+    height: 10vh;
+    width: 76vw;
+    background-color: black;
+}
+
+.number-container {
+    height: 40vh;
+    width: 20vw;
+
+}
