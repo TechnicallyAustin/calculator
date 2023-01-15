@@ -3,9 +3,7 @@ function createCalculator() {
   calculator.setAttribute("class", "calculator");
 
   function DisplayBox() {
-    const displayContainer = calculator.appendChild(
-      document.createElement("div")
-    );
+    const displayContainer = calculator.appendChild(document.createElement("div"));
     displayContainer.setAttribute("class", "display-container");
 
     const display = displayContainer.appendChild(document.createElement("div"));
@@ -21,8 +19,29 @@ function createCalculator() {
         const numberContainer = buttonContainer.appendChild(document.createElement("div"));
         numberContainer.setAttribute("class", "number-container")
 
+
+        const numberButtons = numberContainer.appendChild(document.createElement("div"));
+        numberButtons.setAttribute("class", "number-buttons")
+        
+
+        function clearButton() {
+           const clear = numberButtons.appendChild(document.createElement("div"));
+           clear.setAttribute("class", "aux-clear button");
+           const symbol = clear.appendChild(document.createElement("h3"));
+           symbol.textContent = "AC";
+         }
+         clearButton();
+
+         function negativeButton() {
+            const negative = numberButtons.appendChild(document.createElement("div"));
+            negative.setAttribute("class", "aux-negative button");
+            const symbol = negative.appendChild(document.createElement("h3"));
+            symbol.textContent = "+/-";
+          }; negativeButton();
+
+
       function zeroButton() {
-        const zero = numberContainer.appendChild(document.createElement("div"));
+        const zero = numberButtons.appendChild(document.createElement("div"));
         zero.setAttribute("class", "number zero button");
         const number = zero.appendChild(document.createElement("h3"));
         number.textContent = "0";
@@ -30,7 +49,7 @@ function createCalculator() {
       zeroButton();
 
       function oneButton() {
-        const one = numberContainer.appendChild(document.createElement("div"));
+        const one = numberButtons.appendChild(document.createElement("div"));
         one.setAttribute("class", "number one button");
         const number = one.appendChild(document.createElement("h3"));
         number.textContent = "1";
@@ -38,7 +57,7 @@ function createCalculator() {
       oneButton();
 
       function twoButton() {
-        const two = numberContainer.appendChild(document.createElement("div"));
+        const two = numberButtons.appendChild(document.createElement("div"));
         two.setAttribute("class", "number two button");
         const number = two.appendChild(document.createElement("h3"));
         number.textContent = "2";
@@ -46,7 +65,7 @@ function createCalculator() {
       twoButton();
 
       function threeButton() {
-        const three = numberContainer.appendChild(
+        const three = numberButtons.appendChild(
           document.createElement("div")
         );
         three.setAttribute("class", "number three button");
@@ -56,7 +75,7 @@ function createCalculator() {
       threeButton();
 
       function fourButton() {
-        const four = numberContainer.appendChild(document.createElement("div"));
+        const four = numberButtons.appendChild(document.createElement("div"));
         four.setAttribute("class", "number four button");
         const number = four.appendChild(document.createElement("h3"));
         number.textContent = "4";
@@ -64,7 +83,7 @@ function createCalculator() {
       fourButton();
 
       function fiveButton() {
-        const five = numberContainer.appendChild(document.createElement("div"));
+        const five = numberButtons.appendChild(document.createElement("div"));
         five.setAttribute("class", "number five button");
         const number = five.appendChild(document.createElement("h3"));
         number.textContent = "5";
@@ -72,7 +91,7 @@ function createCalculator() {
       fiveButton();
 
       function sixButton() {
-        const six = numberContainer.appendChild(document.createElement("div"));
+        const six = numberButtons.appendChild(document.createElement("div"));
         six.setAttribute("class", "number six button");
         const number = six.appendChild(document.createElement("h3"));
         number.textContent = "6";
@@ -80,7 +99,7 @@ function createCalculator() {
       sixButton();
 
       function sevenButton() {
-        const seven = numberContainer.appendChild(
+        const seven = numberButtons.appendChild(
           document.createElement("div")
         );
         seven.setAttribute("class", "number seven button");
@@ -90,7 +109,7 @@ function createCalculator() {
       sevenButton();
 
       function eightButton() {
-        const eight = numberContainer.appendChild(
+        const eight = numberButtons.appendChild(
           document.createElement("div")
         );
         eight.setAttribute("class", "number eight button");
@@ -100,7 +119,7 @@ function createCalculator() {
       eightButton();
 
       function nineButton() {
-        const nine = numberContainer.appendChild(document.createElement("div"));
+        const nine = numberButtons.appendChild(document.createElement("div"));
         nine.setAttribute("class", "number nine button");
         const number = nine.appendChild(document.createElement("h3"));
         number.textContent = "9";
