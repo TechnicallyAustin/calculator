@@ -52,7 +52,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-right: 0;
+
+    column-gap: 2%;
 }
 
 .button {
@@ -64,10 +65,12 @@ body {
   align-items: center;
   background-color: lightgrey;
   border: 2px solid black;
+  border-radius: 50%;
 }
 
 .zero {
     width: 30vw;
+    border-radius: 10%;
 }
 
 .button h3 {
@@ -90,5 +93,6 @@ body {
 
 .equals {
     background-color: darkgoldenrod;
+
 }
 
