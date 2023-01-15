@@ -53,15 +53,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: lightgrey;
 
 }
 
 .button h3 {
-    color: white;
+    color: black;
     font-size: 32px;
 }
 
+.operator {
+    background-color: orangered;
+}
+
+.equals {
+    background-color: darkgoldenrod;
+}
 
 
 .number-container {

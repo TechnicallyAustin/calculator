@@ -26,7 +26,7 @@ function createCalculator() {
 
         function clearButton() {
            const clear = numberButtons.appendChild(document.createElement("div"));
-           clear.setAttribute("class", "aux-clear button");
+           clear.setAttribute("class", "aux clear button");
            const symbol = clear.appendChild(document.createElement("h3"));
            symbol.textContent = "AC";
          }
@@ -34,19 +34,18 @@ function createCalculator() {
 
          function negativeButton() {
             const negative = numberButtons.appendChild(document.createElement("div"));
-            negative.setAttribute("class", "aux-negative button");
+            negative.setAttribute("class", "aux negative button");
             const symbol = negative.appendChild(document.createElement("h3"));
             symbol.textContent = "+/-";
           }; negativeButton();
 
+          function percentageButton() {
+            const percent = numberButtons.appendChild(document.createElement("div"));
+            percent.setAttribute("class", "aux percent button")
+            const symbol = percent.appendChild(document.createElement("h3"))
+            symbol.textContent = "%"
+          }; percentageButton()
 
-      function zeroButton() {
-        const zero = numberButtons.appendChild(document.createElement("div"));
-        zero.setAttribute("class", "number zero button");
-        const number = zero.appendChild(document.createElement("h3"));
-        number.textContent = "0";
-      }
-      zeroButton();
 
       function oneButton() {
         const one = numberButtons.appendChild(document.createElement("div"));
@@ -125,6 +124,21 @@ function createCalculator() {
         number.textContent = "9";
       }
       nineButton();
+
+      function zeroButton() {
+        const zero = numberButtons.appendChild(document.createElement("div"));
+        zero.setAttribute("class", "number zero button");
+        const number = zero.appendChild(document.createElement("h3"));
+        number.textContent = "0";
+      }
+      zeroButton();
+
+      function decimalButton() {
+        const decimal = numberButtons.appendChild(document.createElement("div"));
+        decimal.setAttribute("class", "decimial button")
+        const symbol = decimal.appendChild(document.createElement("h3"));
+        symbol.textContent = "."
+      }; decimalButton()
     }
     numbers();
 
