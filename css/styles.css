@@ -1,6 +1,5 @@
 * {
   margin: 0;
-
 }
 
 body {
@@ -12,8 +11,8 @@ body {
 
 .calculator {
   background-color: white;
-  height: 90vh;
-  width: 90vw;
+  height: 80vh;
+  width: 66vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -25,41 +24,64 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 4%;
+  padding-bottom: 4%;
 }
 
 .display {
-  height: 10vh;
-  width: 80vw;
+  height: 12vh;
+  width: 64vw;
   background-color: black;
+  border: 5px solid darkgray;
 }
 
 .button-container {
-    height: 90vh;
-    width: 80vw;
+    width: 66vw;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.number-container {
+    display: flex;
+    height: 62vh;
+}
+
+.number-buttons {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 2%;
-
-
+    align-items: center;
+    padding-right: 0;
 }
 
 .button {
-  height: 7vh;
-  width: 10vw;
-  border-radius: 50px;
+  height: 10vh;
+  width: 15vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: lightgrey;
+  border: 2px solid black;
+}
 
+.zero {
+    width: 30vw;
 }
 
 .button h3 {
     color: black;
     font-size: 32px;
+}
+
+.operator-container {
+    height: 62vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .operator {
@@ -70,38 +92,3 @@ body {
     background-color: darkgoldenrod;
 }
 
-
-.number-container {
-    width: 68vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.number-buttons {
-    height: 64vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    row-gap: 10%;
-    column-gap: 20%;
-    border-top: none;
-
-}
-
-.operator-container {
-    height: 64vh;
-    width: 16vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: white;
-    border: 5px solid black;
-
-
-
-}

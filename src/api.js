@@ -15,7 +15,7 @@ function createCalculator() {
     const buttonContainer = calculator.appendChild(document.createElement("div"));
     buttonContainer.setAttribute("class", "button-container");
 
-    function numbers() {
+    function buttonLayout() {
         const numberContainer = buttonContainer.appendChild(document.createElement("div"));
         numberContainer.setAttribute("class", "number-container")
 
@@ -139,8 +139,8 @@ function createCalculator() {
         const symbol = decimal.appendChild(document.createElement("h3"));
         symbol.textContent = "."
       }; decimalButton()
-    }
-    numbers();
+      
+    }; buttonLayout();
 
     function operators() {
         const operatorContainer = buttonContainer.appendChild(document.createElement("div"));
@@ -183,24 +183,6 @@ function createCalculator() {
         operator.textContent = "/";
       }
       divideButton();
-
-      function exponentButton() {
-        const exponent = operatorContainer.appendChild(
-          document.createElement("div")
-        );
-        exponent.setAttribute("class", "operator exponent button");
-        const operator = exponent.appendChild(document.createElement("h3"));
-        operator.textContent = "x ^ 2";
-      }
-      exponentButton();
-
-      function squareRootButton() {
-        const squareRoot = operatorContainer.appendChild(document.createElement("div"));
-        squareRoot.setAttribute("class", "operator squareRoot button");
-        const operator = squareRoot.appendChild(document.createElement("h3"));
-        operator.textContent = "Sqr";
-      }
-      squareRootButton();
 
       function equalsButton() {
         const equals = operatorContainer.appendChild(document.createElement("div"));
