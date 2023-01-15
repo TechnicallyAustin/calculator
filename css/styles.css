@@ -33,27 +33,47 @@ body {
   width: 64vw;
   background-color: black;
   border: 5px solid darkgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-container {
+  width: 62vw;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+
+}
+
+.result-value {
+  color: white;
+  text-align: right;
+  font-size: 75px;
+
 }
 
 .button-container {
-    width: 66vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 66vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .number-container {
-    display: flex;
-    height: 62vh;
+  display: flex;
+  height: 62vh;
 }
 
 .number-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-    column-gap: 2%;
+  column-gap: 2%;
 }
 
 .button {
@@ -66,33 +86,36 @@ body {
   background-color: lightgrey;
   border: 2px solid black;
   border-radius: 50%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.aux {
+  background-color: darkgray;
 }
 
 .zero {
-    width: 30vw;
-    border-radius: 10%;
+  width: 30vw;
+  border-radius: 10%;
 }
 
 .button h3 {
-    color: black;
-    font-size: 32px;
+  color: black;
+  font-size: 32px;
 }
 
 .operator-container {
-    height: 62vh;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: auto;
-    align-items: center;
-    justify-content: center;
+  height: 62vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .operator {
-    background-color: orangered;
+  background-color: orangered;
 }
 
 .equals {
-    background-color: darkgoldenrod;
-
+  background-color: darkgoldenrod;
 }
-

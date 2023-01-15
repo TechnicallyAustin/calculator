@@ -8,6 +8,13 @@ function createCalculator() {
 
     const display = displayContainer.appendChild(document.createElement("div"));
     display.setAttribute("class", "display");
+
+    const resultContainer = display.appendChild(document.createElement("div"))
+    resultContainer.setAttribute("class", "result-container")
+
+    const resultValue = resultContainer.appendChild(document.createElement("h3"));
+        resultValue.setAttribute("class", "result-value");
+        resultValue.textContent = "0";
   }
   DisplayBox();
 
