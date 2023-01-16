@@ -8,7 +8,17 @@ function calculatorFunctionality() {
   // first number = the current number in the display
   //  each operator will
 
-  function updateDisplay() {}
+
+  const displayArray = [];
+  let displayValue = document.querySelector(".result-value");
+  function updateDisplay(evt) {
+    // array.push(evt)
+        // creates a running list of numbers entered.
+
+
+  }
+
+
 
   function operations() {
     const operatorButtons = document.getElementsByClassName("operator")
@@ -106,12 +116,18 @@ function calculatorFunctionality() {
     function numbers() {
       const numberButtons = document.getElementsByClassName("number");
 
+      function listNumbers() {
+        displayValue.textContent += textValue;
+        console.log(displayValue.textContent, textValue);
+      }
+
       function one() {
         const oneButton = numberButtons[0];
-        const textValue = oneButton.firstChild.textContent;
-        const numberValue = parseInt(textValue);
+        let textValue = oneButton.firstChild.textContent;
+        //const numberValue = parseInt(textValue);
         oneButton.addEventListener("click", () => {
-          console.log(numberValue);
+            displayValue.textContent += textValue
+            console.log(displayValue.textContent, textValue)
         });
       }
       one();
@@ -121,6 +137,8 @@ function calculatorFunctionality() {
         const textValue = twoButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         twoButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       }
@@ -131,6 +149,8 @@ function calculatorFunctionality() {
         const textValue = threeButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         threeButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       }
@@ -141,6 +161,8 @@ function calculatorFunctionality() {
         const textValue = fourButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         fourButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       };
@@ -151,6 +173,8 @@ function calculatorFunctionality() {
         const textValue = fiveButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         fiveButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       }; five()
@@ -160,6 +184,8 @@ function calculatorFunctionality() {
         const textValue = sixButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         sixButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       }; six()
@@ -169,6 +195,8 @@ function calculatorFunctionality() {
         const textValue = sevenButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         sevenButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       }
@@ -179,6 +207,8 @@ function calculatorFunctionality() {
         const textValue = eightButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         eightButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       }; eight()
@@ -188,6 +218,8 @@ function calculatorFunctionality() {
         const textValue = nineButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         nineButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       }; nine()
@@ -197,6 +229,8 @@ function calculatorFunctionality() {
         const textValue = zeroButton.firstChild.textContent;
         const numberValue = parseInt(textValue);
         zeroButton.addEventListener("click", () => {
+                 displayValue.textContent += textValue;
+                 console.log(displayValue.textContent, textValue);
           console.log(numberValue);
         });
       }; zero()

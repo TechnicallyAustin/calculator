@@ -18,7 +18,7 @@ function createCalculator() {
       document.createElement("h3")
     );
     resultValue.setAttribute("class", "result-value");
-    resultValue.textContent = "0";
+
   }
   DisplayBox();
 
