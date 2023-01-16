@@ -43,7 +43,7 @@ function createCalculator() {
         const clear = numberButtons.appendChild(document.createElement("div"));
         clear.setAttribute("class", "aux clear button");
         const symbol = clear.appendChild(document.createElement("h3"));
-        symbol.textContent = "AC";
+        symbol.textContent = "C";
       };
       clearButton();
 
@@ -52,6 +52,7 @@ function createCalculator() {
           document.createElement("div")
         );
         negative.setAttribute("class", "aux negative button");
+        negative.setAttribute("value", "off")
         const symbol = negative.appendChild(document.createElement("h3"));
         symbol.textContent = "+/-";
       };
@@ -151,7 +152,7 @@ function createCalculator() {
         const decimal = numberButtons.appendChild(
           document.createElement("div")
         );
-        decimal.setAttribute("class", "decimial button");
+        decimal.setAttribute("class", "aux decimial button");
         const symbol = decimal.appendChild(document.createElement("h3"));
         symbol.textContent = ".";
       };

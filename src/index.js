@@ -11,25 +11,97 @@ function calculatorFunctionality() {
   function updateDisplay() {}
 
   function operations() {
-    function addition(firstNumber, secondNumber) {}
+    const operatorButtons = document.getElementsByClassName("operator")
+    const auxButtons = document.getElementsByClassName("aux");
 
-    function subtraction(firstNumber, secondNumber) {}
+    function addition() {
+        const addButton = operatorButtons[0]
+        const textValue = addButton.firstChild.textContent
+        addButton.addEventListener("click", () => {
+            console.log(textValue)
+        })
 
-    function division(firstNumber, secondNumber) {}
 
-    function multiplicaiton(firstNumber, secondNumber) {}
+    }; addition()
 
-    function evaluation(firstNumber, secondNumber) {}
+    function subtraction() {
+        const subtractButton = operatorButtons[1]
+        const textValue = subtractButton.firstChild.textContent
+        subtractButton.addEventListener("click", () => {
+            console.log(textValue)
+        })
+    }; subtraction()
 
-    function decimal() {}
+    function division() {
+            const divideButton = operatorButtons[2];
+            const textValue = divideButton.firstChild.textContent;
+            divideButton.addEventListener("click", () => {
+              console.log(textValue);
+            });
+    }; division()
 
-    function clear() {}
+    function multiplicaiton() {
+            const multiplyButton = operatorButtons[3];
+            const textValue = multiplyButton.firstChild.textContent;
+            multiplyButton.addEventListener("click", () => {
+              console.log(textValue);
+            });
+    }; multiplicaiton()
 
-    function allClear() {}
+    function evaluation() {
+            const equalButton = operatorButtons[4];
+            const textValue = equalButton.firstChild.textContent;
+            equalButton.addEventListener("click", () => {
+              console.log(textValue);
+            });
+    }; evaluation()
 
-    function negativeToggle() {}
+    function clearToggle() {
+        const clearButton = auxButtons[0]
+        clearButton.addEventListener("click", () =>{
+            if (clearButton.firstChild.textContent === "C"){
+            clearButton.firstChild.textContent = "AC"
+            console.log("All Clear")
+            // clears all numbers
+            }
+            else if (clearButton.firstChild.textContent === "AC") {
+                clearButton.firstChild.textContent = "C"
+                // clears the current number
+                console.log("Clear")
+            }
+        })
+    }; clearToggle()
 
-    function percentage() {}
+
+    function negativeToggle() {
+         const negativeButton = auxButtons[1];
+         negativeButton.addEventListener("click", () => {
+           if (negativeButton.getAttribute("value") === "off") {
+             negativeButton.setAttribute("value", "on");
+             console.log("negative on")
+             // makes the current number negative
+           } else if (negativeButton.getAttribute("value") === "on") {
+             negativeButton.setAttribute("value", "off");
+             console.log("negative off")
+             // makes the current number positive
+           }
+         });
+    }; negativeToggle()
+
+    function percentage() {
+        const percentButton = auxButtons[2];
+        percentButton.addEventListener("click", () => {
+            console.log("percent clicked")
+        })
+    }; percentage()
+
+        function decimal() {
+            const decimalButton = auxButtons[3]
+            decimalButton.addEventListener("click", () => {
+                console.log("decimal clicked")
+            })
+        }; decimal()
+
 
     function numbers() {
       const numberButtons = document.getElementsByClassName("number");
@@ -128,6 +200,7 @@ function calculatorFunctionality() {
           console.log(numberValue);
         });
       }; zero()
+
     };
     numbers();
   };
