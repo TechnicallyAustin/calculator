@@ -46,7 +46,7 @@ function calculatorFunctionality() {
             firstInput = 0
 
           } else if (operator === "-") {
-            let result = firstInput - secondInput
+            let result = (firstInput - secondInput)
             displayValue.textContent = `${result}`;
             firstInput = 0
             
@@ -69,14 +69,22 @@ function calculatorFunctionality() {
       clearButton.addEventListener("click", () => {
         if (clearButton.firstChild.textContent === "C") {
           clearButton.firstChild.textContent = "AC";
-          displayValue.textContent = " ";
+          console.log(displayValue.textContent)
+          if (displayValue.textContent !== " "){
+             displayValue.textContent = " ";
+             console.log("All Clear", "fi", firstInput, "si", secondInput);
+          }
           
-          console.log("All Clear");
 
         } else if (clearButton.firstChild.textContent === "AC") {
           clearButton.firstChild.textContent = "C";
-          // clears the current number
-          console.log("Clear");
+          if (displayValue.textContent === " "){
+            firstInput = 0
+            console.log(firstInput)
+
+          }
+          console.log("Clear", "fi", firstInput, "si", secondInput);
+            clearButton.firstChild.textContent = "C"
         }
       });
     }
