@@ -8,28 +8,31 @@ function calculatorFunctionality() {
   // first number = the current number in the display
   //  each operator will
 
+  // ** need to revise the calculator logic
+  // **  need to add a sub display that shows the current operation
+  // ** adjust the AC/C toggle to just AC and change +/- to C 
+
   let displayValue = document.querySelector(".result-value");
 
   function operations() {
     const operatorButtons = document.getElementsByClassName("operator");
     const auxButtons = document.getElementsByClassName("aux");
-    let firstInput
-    let secondInput
+    let firstInput;
+    let secondInput;
 
-    function operationEvents(){
-        for (let i = 0; i < operatorButtons.length - 1; i++){
-            let button = operatorButtons[i]
-            let textValue = button.firstChild.textContent
-            button.addEventListener("click", () => {
-                firstInput = parseInt(displayValue.textContent)
-                displayValue.textContent = " "
-                console.log(`${textValue} button hit`, firstInput, textValue)
-                evaluation(textValue)
-
-
-            })
-        }
-    }; operationEvents()
+    function operationEvents() {
+      for (let i = 0; i < operatorButtons.length - 1; i++) {
+        let button = operatorButtons[i];
+        let textValue = button.firstChild.textContent;
+        button.addEventListener("click", () => {
+          firstInput = parseInt(displayValue.textContent);
+          displayValue.textContent = " ";
+          console.log(`${textValue} button hit`, firstInput, textValue);
+          evaluation(textValue);
+        });
+      }
+    }
+    operationEvents();
 
     function evaluation(operator) {
       console.log("previous input", firstInput);
@@ -38,28 +41,25 @@ function calculatorFunctionality() {
 
       equalButton.addEventListener("click", () => {
         secondInput = parseInt(displayValue.textContent);
-        console.log(firstInput, secondInput)
+        console.log(firstInput, secondInput);
 
-          if (operator === "+") {
-            let result = firstInput + secondInput
-            displayValue.textContent = `${result}`
-            firstInput = 0
-
-          } else if (operator === "-") {
-            let result = (firstInput - secondInput)
-            displayValue.textContent = `${result}`;
-            firstInput = 0
-            
-          } else if (operator === "X") {
-            let result = firstInput * secondInput
-            displayValue.textContent = `${result}`;
-            firstInput = 0
-          } else if (operator === "/") {
-            let result = firstInput / secondInput
-            displayValue.textContent = `${result}`;
-            firstInput = 0
-          }
-        
+        if (operator === "+") {
+          let result = firstInput + secondInput;
+          displayValue.textContent = `${result}`;
+          firstInput = 0;
+        } else if (operator === "-") {
+          let result = firstInput - secondInput;
+          displayValue.textContent = `${result}`;
+          firstInput = 0;
+        } else if (operator === "X") {
+          let result = firstInput * secondInput;
+          displayValue.textContent = `${result}`;
+          firstInput = 0;
+        } else if (operator === "/") {
+          let result = firstInput / secondInput;
+          displayValue.textContent = `${result}`;
+          firstInput = 0;
+        }
       });
     }
     evaluation();
@@ -69,22 +69,19 @@ function calculatorFunctionality() {
       clearButton.addEventListener("click", () => {
         if (clearButton.firstChild.textContent === "C") {
           clearButton.firstChild.textContent = "AC";
-          console.log(displayValue.textContent)
-          if (displayValue.textContent !== " "){
-             displayValue.textContent = " ";
-             console.log("All Clear", "fi", firstInput, "si", secondInput);
+          console.log(displayValue.textContent);
+          if (displayValue.textContent !== " ") {
+            displayValue.textContent = " ";
+            console.log("All Clear", "fi", firstInput, "si", secondInput);
           }
-          
-
         } else if (clearButton.firstChild.textContent === "AC") {
           clearButton.firstChild.textContent = "C";
-          if (displayValue.textContent === " "){
-            firstInput = 0
-            console.log(firstInput)
-
+          if (displayValue.textContent === " ") {
+            firstInput = 0;
+            console.log(firstInput);
           }
           console.log("Clear", "fi", firstInput, "si", secondInput);
-            clearButton.firstChild.textContent = "C"
+          clearButton.firstChild.textContent = "C";
         }
       });
     }
