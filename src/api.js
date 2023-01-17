@@ -14,10 +14,21 @@ function createCalculator() {
     const resultContainer = display.appendChild(document.createElement("div"));
     resultContainer.setAttribute("class", "result-container");
 
-    const resultValue = resultContainer.appendChild(
-      document.createElement("h3")
+    const resultValueContaineer = resultContainer.appendChild(
+      document.createElement("div")
     );
-    resultValue.setAttribute("class", "result-value");
+    resultValueContaineer.setAttribute("class", "result-value-container");
+
+    const resultValue = resultValueContaineer.appendChild(document.createElement("h3"))
+    resultValue.setAttribute("class", "result-value")
+
+    const previousResultContainer = resultContainer.appendChild(document.createElement("div"))
+    previousResultContainer.setAttribute("class", "previous-value-container"
+    )
+
+    const previousResult = previousResultContainer.appendChild(document.createElement("h3"))
+    previousResult.setAttribute("class", "previous-result")
+
 
   }
   DisplayBox();

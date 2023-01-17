@@ -12,7 +12,9 @@ function calculatorFunctionality() {
   // **  need to add a sub display that shows the current operation
   // ** adjust the AC/C toggle to just AC and change +/- to C 
 
-  let displayValue = document.querySelector(".result-value");
+  const displayValue = document.querySelector(".result-value");
+  const previousEvaluation = document.querySelector(".previous-result")
+
 
   function operations() {
     const operatorButtons = document.getElementsByClassName("operator");
@@ -25,8 +27,18 @@ function calculatorFunctionality() {
         let button = operatorButtons[i];
         let textValue = button.firstChild.textContent;
         button.addEventListener("click", () => {
-          firstInput = parseInt(displayValue.textContent);
-          displayValue.textContent = " ";
+                if (displayValue.textContent === " ") {
+                  console.log("empty");
+                } else {
+                    firstInput = parseInt(displayValue.textContent)
+                     previousEvaluation.textContent = `${firstInput + " "} ${
+                       textValue + " "
+                     } `;
+                     displayValue.textContent = " "; 
+                  console.log("filled", firstInput);
+                }
+
+
           console.log(`${textValue} button hit`, firstInput, textValue);
           evaluation(textValue);
         });
@@ -38,25 +50,34 @@ function calculatorFunctionality() {
       console.log("previous input", firstInput);
       const equalButton = operatorButtons[4];
       const textValue = equalButton.firstChild.textContent;
+     
 
       equalButton.addEventListener("click", () => {
         secondInput = parseInt(displayValue.textContent);
+        console.log("second input", secondInput)
         console.log(firstInput, secondInput);
+         const evalMsg = `${firstInput + " "} ${operator + " "} ${
+           secondInput + " "
+         } ${textValue}`;
 
         if (operator === "+") {
           let result = firstInput + secondInput;
+           previousEvaluation.textContent = evalMsg
           displayValue.textContent = `${result}`;
           firstInput = 0;
         } else if (operator === "-") {
           let result = firstInput - secondInput;
+          previousEvaluation.textContent = evalMsg;
           displayValue.textContent = `${result}`;
           firstInput = 0;
         } else if (operator === "X") {
           let result = firstInput * secondInput;
+          previousEvaluation.textContent = evalMsg;
           displayValue.textContent = `${result}`;
           firstInput = 0;
         } else if (operator === "/") {
           let result = firstInput / secondInput;
+          previousEvaluation.textContent = evalMsg;
           displayValue.textContent = `${result}`;
           firstInput = 0;
         }

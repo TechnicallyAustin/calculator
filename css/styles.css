@@ -42,18 +42,44 @@ body {
   width: 62vw;
   height: 10vh;
   display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column-reverse;
+}
+
+.result-value-container {
+  display: flex;
   justify-content: flex-end;
   align-items: center;
-
+  height: 6vh;
+  width: 62vw;
+  border: 2px solid white;
 
 }
 
-.result-value {
+.result-value{
+  font-size: 72px;
   color: white;
   text-align: right;
-  font-size: 75px;
+}
+
+.previous-value-container {
+  border: 2px solid white;
+  height: 3vh;
+  width: 30vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.previous-result{
+  color: orange;
+  text-align: right;
 
 }
+
+
+
 
 .button-container {
   width: 66vw;
@@ -119,3 +145,5 @@ body {
 .equals {
   background-color: darkgoldenrod;
 }
+
+
