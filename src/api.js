@@ -52,9 +52,9 @@ function createCalculator() {
 
       function clearButton() {
         const clear = numberButtons.appendChild(document.createElement("div"));
-        clear.setAttribute("class", "aux clear button");
+        clear.setAttribute("class", "mod all-clear button");
         const symbol = clear.appendChild(document.createElement("h3"));
-        symbol.textContent = "C";
+        symbol.textContent = "AC";
       };
       clearButton();
 
@@ -62,10 +62,10 @@ function createCalculator() {
         const negative = numberButtons.appendChild(
           document.createElement("div")
         );
-        negative.setAttribute("class", "aux negative button");
+        negative.setAttribute("class", "mod clear button");
         negative.setAttribute("value", "off")
         const symbol = negative.appendChild(document.createElement("h3"));
-        symbol.textContent = "+/-";
+        symbol.textContent = "C"
       };
       negativeButton();
 
@@ -73,7 +73,7 @@ function createCalculator() {
         const percent = numberButtons.appendChild(
           document.createElement("div")
         );
-        percent.setAttribute("class", "aux percent button");
+        percent.setAttribute("class", "mod percent button");
         const symbol = percent.appendChild(document.createElement("h3"));
         symbol.textContent = "%";
       };
@@ -163,7 +163,7 @@ function createCalculator() {
         const decimal = numberButtons.appendChild(
           document.createElement("div")
         );
-        decimal.setAttribute("class", "aux decimial button");
+        decimal.setAttribute("class", "mod decimial button");
         const symbol = decimal.appendChild(document.createElement("h3"));
         symbol.textContent = ".";
       };

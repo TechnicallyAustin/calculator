@@ -35,7 +35,7 @@ function calculatorFunctionality() {
                        textValue + " "
                      } `;
                      displayValue.textContent = " "; 
-                  console.log("filled", firstInput);
+                  //console.log("filled", firstInput);
                 }
 
 
@@ -47,43 +47,47 @@ function calculatorFunctionality() {
     operationEvents();
 
     function evaluation(operator) {
-      console.log("previous input", firstInput);
+      console.log("evaluation() first input", firstInput);
       const equalButton = operatorButtons[4];
       const textValue = equalButton.firstChild.textContent;
      
 
       equalButton.addEventListener("click", () => {
         secondInput = parseInt(displayValue.textContent);
-        console.log("second input", secondInput)
-        console.log(firstInput, secondInput);
+        console.log("evaluation() event() second input", secondInput)
          const evalMsg = `${firstInput + " "} ${operator + " "} ${
            secondInput + " "
          } ${textValue}`;
 
+         console.log(evalMsg)
+
         if (operator === "+") {
+
           let result = firstInput + secondInput;
+           console.log("operator add first input" ,firstInput);
            previousEvaluation.textContent = evalMsg
           displayValue.textContent = `${result}`;
-          firstInput = 0;
+          firstInput = result
+          secondInput = 0
+
         } else if (operator === "-") {
           let result = firstInput - secondInput;
           previousEvaluation.textContent = evalMsg;
           displayValue.textContent = `${result}`;
-          firstInput = 0;
+
         } else if (operator === "X") {
           let result = firstInput * secondInput;
           previousEvaluation.textContent = evalMsg;
           displayValue.textContent = `${result}`;
-          firstInput = 0;
+
         } else if (operator === "/") {
           let result = firstInput / secondInput;
           previousEvaluation.textContent = evalMsg;
-          displayValue.textContent = `${result}`;
-          firstInput = 0;
+          displayValue.textContent = `${result}`
         }
       });
     }
-    evaluation();
+
 
     function clearToggle() {
       const clearButton = auxButtons[0];
