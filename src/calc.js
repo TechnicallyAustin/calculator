@@ -1,7 +1,7 @@
 function calculator() {
-     const firstInput = 0;
-     const secondInput = 0;
-     let result = document.querySelector(".result-value")
+     let firstInput 
+     let secondInput 
+     const result = document.querySelector(".result-value")
      let previousResult = document.querySelector(".previous-result")
 
      const numbers = document.getElementsByClassName("number")
@@ -48,48 +48,103 @@ function calculator() {
      }
     }; modifierButtons()
 
+
+
+    function add(firstNumber, secondNumber) {
+        let num1 = parseInt(firstNumber)
+        let num2 = parseFloat(secondNumber)
+        let total = num1 + num2
+        result.textContent = total
+
+    }; 
+
+    function subtract(firstNumber, secondNumber) {}
+
+    function divide(firstNumber, secondNumber) {}
+
+    function equals(firstNumber, secondNumber) {}
+
+    function updateDisplay() {}
+
     function operatorButtons() {
+        // sets first input when operator is clicked.
+        console.log("operator out of loop:", "FI", firstInput, "SI", secondInput)
          for (let i = 0; i < operators.length; i++){
             let operator = operators[i]
             let value = operator.textContent
             operator.addEventListener("click", () => {
-                switch(value) {
-                    case "+":
-                        console.log(value);
-                        break;
-
-                    case "-":
-                        console.log(value);
-                        break;
-
-                    case "X":
-                        console.log(value);
-                        break;
-
-                    case "/":
-                        console.log(value);
+                switch (value) {
+                  case "+":
+                    // sets first input when operator is clicked.
+                    firstInput = result.textContent
+                    result.textContent = " "
+                    console.log(value);
+                    console.log("case +", "FI", firstInput)
+                    evaluate(value)
                     break;
 
-                    case "=":
-                        console.log(value);
+                  case "-":
+                    // sets first input when operator is clicked.
+                    console.log(value);
                     break;
 
-                    default:
-                        console.log("Operator default message")
+                  case "X":
+                    // sets first input when operator is clicked.
+                    console.log(value);
+                    break;
+
+                  case "/":
+                    // sets first input when operator is clicked.
+                    console.log(value);
+                    break;
+
+                  default:
+                    console.log("Operator default message");
                 }
             })
          }
     }; operatorButtons()
 
-    function updateDisplay() {}
+    function evaluate(operator) {
+        const equalButton = document.querySelector(".equals")
+        equalButton.addEventListener("click", () => {
+                  secondInput = result.textContent;
+                  switch(operator) {
 
-    function add() {}
+                    case "+":
+                        add(firstInput,secondInput)
+                        break;
+                    
+                    case "-":
+                        break;
 
-    function subtract() {}
+                    case "X":
+                        break;
 
-    function divide() {}
+                    case "/":
+                        break;
 
-    function equals() {}
+                    default:
+                        console.log("evaluate default message")
+
+                  }
+
+
+                  console.log(
+                    "operator = loop:",
+                    "FI",
+                    firstInput,
+                    "SI",
+                    secondInput
+                  );
+                  // sets second input when operator is clicked.
+        })
+  
+                    
+    }; 
+
+
+    
 
 
 }; calculator()
