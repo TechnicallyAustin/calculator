@@ -1,9 +1,8 @@
 function calculator() {
   let firstInput;
   let secondInput;
-  let runningTotal = 0;
 
-  const result = document.querySelector(".result-value");
+  let result = document.querySelector(".result-value");
   let previousResult = document.querySelector(".previous-result");
   let previousOperator = " "
 
@@ -26,7 +25,9 @@ function calculator() {
     for (let i = 0; i < modifiers.length; i++) {
       let modifier = modifiers[i];
       let value = modifier.textContent;
+
       modifier.addEventListener("click", () => {
+
         switch (value) {
           case "AC":
             previousResult.textContent = " ";
@@ -56,44 +57,49 @@ function calculator() {
   }
   modifierButtons();
 
-  function add(firstNumber, secondNumber) {
+  function math(operator){
+    switch (operator){
+        case "+":
+            break;
+
+        case "-":
+            break;
+
+        case "X":
+            break;
+
+        case "/":
+            break;
+
+            default:
+                console.log("Operator not found")
+    }
   }
-
-  function subtract(firstNumber, secondNumber) {}
-
-  function divide(firstNumber, secondNumber) {}
-
-  function equals(firstNumber, secondNumber) {}
 
   function operatorButtons() {
     // sets first input when operator is clicked.
     console.log("operator out of loop:", "FI", firstInput, "SI", secondInput);
+
     for (let i = 0; i < operators.length - 1; i++) {
       let operator = operators[i];
       let value = operator.textContent;
 
       operator.addEventListener("click", () => {
-        firstInput = parseInt(result.textContent)
-        previousOperator = value
-        result.textContent = " "
-        previousResult.textContent = `${firstInput + " "} ${value}`
-
-        runningTotal = evaluate(previousOperator, firstInput)
-
+        evaluate(value)
       })
     }
   };
   operatorButtons();
 
-  function evaluate(previousOperator, num1) {
+  function evaluate(previousOperator) {
     const equalButton = document.querySelector(".equals");
     const value = equalButton.textContent;
-    console.log("PO",previousOperator, num1)
+
         equalButton.addEventListener("click", () => {
-          secondInput = parseInt(result.textContent);
+            secondInput = parseInt(result.textContent);
+            console.log("= clicked", "first input", firstInput, "previousOperator", previousOperator, "second Input", secondInput)
           switch (previousOperator) {
             case "+":
-                add(num1, secondInput)
                 console.log(value)
             break;
 
@@ -114,7 +120,7 @@ function calculator() {
           }; 
 
 
-          console.log("operator = loop:", "FI", num1, "SI", secondInput, "PR", previousOperator);
+          console.log("operator = loop:","FI", firstInput, "SI", secondInput, "PR", previousOperator);
           // sets second input when operator is clicked.
         });
     
