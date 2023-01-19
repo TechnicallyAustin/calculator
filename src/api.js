@@ -203,7 +203,7 @@ function createCalculator() {
         );
         multiply.setAttribute("class", "operator multiply button");
         const operator = multiply.appendChild(document.createElement("h3"));
-        operator.textContent = "X";
+        operator.textContent = "*";
       };
       multiplyButton();
 

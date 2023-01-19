@@ -64,33 +64,84 @@ function calculator() {
   modifierButtons();
 
   function math(operator) {
+    let a;
+    let b;
+    let total;
     switch (operator) {
       case "+":
         // sets the first input to a number
-        let a = parseInt(firstInput);
+        a = parseInt(firstInput);
         // sets the second input tp a number
-        let b = parseInt(secondInput);
+        b = parseInt(secondInput);
         // sets the sum to the sum of a + b
-        let sum = a + b;
+        total = a + b;
 
         // updates the result with the sum
-        result.textContent = sum;
+        result.textContent = total;
 
         //sets running total to sum
-        return sum;
+        return total;
 
         console.log("RT", runningTotal, "FI", firstInput, "SI", secondInput);
 
-        console.log("math function add", "sum", sum);
+        console.log("math function add", "sum", total);
         break;
 
       case "-":
+        // sets the first input to a number
+        a = parseInt(firstInput);
+        // sets the second input tp a number
+        b = parseInt(secondInput);
+        // sets the sum to the sum of a + b
+        total = a - b;
+
+        // updates the result with the sum
+        result.textContent = total;
+
+        //sets running total to sum
+        return total;
+
+        console.log("RT", runningTotal, "FI", firstInput, "SI", secondInput);
+
+        console.log("math function subtract", "sum", total);
         break;
 
-      case "X":
+      case "*":
+        // sets the first input to a number
+        a = parseInt(firstInput);
+        // sets the second input tp a number
+        b = parseInt(secondInput);
+        // sets the sum to the sum of a + b
+        total = a * b;
+
+        // updates the result with the sum
+        result.textContent = total;
+
+        //sets running total to sum
+        return total;
+
+        console.log("RT", runningTotal, "FI", firstInput, "SI", secondInput);
+
+        console.log("math function multiply", "total", total);
         break;
 
       case "/":
+        // sets the first input to a number
+        a = parseInt(firstInput);
+        // sets the second input tp a number
+        b = parseInt(secondInput);
+        // sets the sum to the sum of a + b
+        total = a / b;
+
+        // updates the result with the sum
+        result.textContent = total;
+
+        //sets running total to sum
+        return total;
+
+        console.log("RT", runningTotal, "FI", firstInput, "SI", secondInput);
+
+        console.log("math function divide", "total", total);
         break;
 
       default:
@@ -151,15 +202,28 @@ function calculator() {
           break;
 
         case "-":
-          console.log(value);
+             runningTotal = math(previousOperator);
+
+             previousResult.textContent = `${firstInput + " "} ${
+               previousOperator + " "
+             } ${secondInput + " "} ${value + " "} ${runningTotal} `;
+            
           break;
 
-        case "X":
-          console.log(value);
+        case "*":
+             runningTotal = math(previousOperator);
+
+             previousResult.textContent = `${firstInput + " "} ${
+               previousOperator + " "
+             } ${secondInput + " "} ${value + " "} ${runningTotal} `;
           break;
 
         case "/":
-          console.log(value);
+             runningTotal = math(previousOperator);
+
+             previousResult.textContent = `${firstInput + " "} ${
+               previousOperator + " "
+             } ${secondInput + " "} ${value + " "} ${runningTotal} `;
           break;
 
         default:
