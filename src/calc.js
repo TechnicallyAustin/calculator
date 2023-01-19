@@ -48,6 +48,7 @@ function calculator() {
             break;
 
           case "%":
+
             console.log(value);
             break;
 
@@ -144,6 +145,16 @@ function calculator() {
         console.log("math function divide", "total", total);
         break;
 
+        case "%":
+            a = parseInt(firstInput);
+            b = parseInt(secondInput)
+
+            total = b / a
+
+            result.textContent = total
+            return total
+            break;
+
       default:
         console.log("Operator not found");
     }
@@ -225,6 +236,15 @@ function calculator() {
                previousOperator + " "
              } ${secondInput + " "} ${value + " "} ${runningTotal} `;
           break;
+
+          case "%":
+            runningTotal = math(previousOperator);
+
+            previousResult.textContent = `${firstInput + " "} ${
+              previousOperator + " "
+            } ${secondInput + " "} ${value + " "} ${runningTotal} `;
+
+            break;
 
         default:
           console.log("evaluate default message", previousOperator);

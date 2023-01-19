@@ -73,7 +73,7 @@ function createCalculator() {
         const percent = numberButtons.appendChild(
           document.createElement("div")
         );
-        percent.setAttribute("class", "mod percent button");
+        percent.setAttribute("class", "operator mod-percent button");
         const symbol = percent.appendChild(document.createElement("h3"));
         symbol.textContent = "%";
       };

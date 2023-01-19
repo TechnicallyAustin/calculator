@@ -115,9 +115,6 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-.mod {
-  background-color: darkgray;
-}
 
 .zero {
   width: 30vw;
@@ -141,6 +138,12 @@ body {
 .operator {
   background-color: orangered;
 }
+
+.mod-percent,
+.mod {
+  background-color: darkgray;
+}
+
 
 .equals {
   background-color: darkgoldenrod;
