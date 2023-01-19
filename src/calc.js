@@ -49,11 +49,16 @@ function calculator() {
 
           case "%":
 
-            console.log(value);
             break;
 
           case ".":
-            console.log(value);
+            let digits = runningTotal.split("")
+            let found = digits.find(element => element === ".")
+
+            if (!found) {
+                runningTotal += value;
+                result.textContent += value;
+            }
             break;
 
           default:
@@ -71,11 +76,12 @@ function calculator() {
     switch (operator) {
       case "+":
         // sets the first input to a number
-        a = parseInt(firstInput);
+        a = parseFloat(firstInput);
         // sets the second input tp a number
-        b = parseInt(secondInput);
+        b = parseFloat(secondInput);
         // sets the sum to the sum of a + b
         total = a + b;
+         total = total.splice(0, 3);
 
         // updates the result with the sum
         result.textContent = total;
@@ -90,9 +96,9 @@ function calculator() {
 
       case "-":
         // sets the first input to a number
-        a = parseInt(firstInput);
+        a = parseFloat(firstInput);
         // sets the second input tp a number
-        b = parseInt(secondInput);
+        b = parseFloat(secondInput);
         // sets the sum to the sum of a + b
         total = a - b;
 
@@ -109,17 +115,19 @@ function calculator() {
 
       case "*":
         // sets the first input to a number
-        a = parseInt(firstInput);
+        a = parseFloat(firstInput);
         // sets the second input tp a number
-        b = parseInt(secondInput);
+        b = parseFloat(secondInput);
         // sets the sum to the sum of a + b
-        total = a * b;
+        total = a * b
+        roundedTotal = Math.round(total * 10) / 10
 
         // updates the result with the sum
         result.textContent = total;
 
         //sets running total to sum
         return total;
+
 
         console.log("RT", runningTotal, "FI", firstInput, "SI", secondInput);
 
@@ -128,9 +136,9 @@ function calculator() {
 
       case "/":
         // sets the first input to a number
-        a = parseInt(firstInput);
+        a = parseFloat(firstInput);
         // sets the second input tp a number
-        b = parseInt(secondInput);
+        b = parseFloat(secondInput);
         // sets the sum to the sum of a + b
         total = a / b;
 
@@ -146,8 +154,8 @@ function calculator() {
         break;
 
         case "%":
-            a = parseInt(firstInput);
-            b = parseInt(secondInput)
+            a = parseFloat(firstInput);
+            b = parseFloat(secondInput)
 
             total = b / a
 
@@ -194,7 +202,6 @@ function calculator() {
 
   function evaluate(previousOperator) {
     addEqualEvents()
-   
   }; evaluate()
 
   function addEqualEvents() {
