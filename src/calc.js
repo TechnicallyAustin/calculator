@@ -47,10 +47,6 @@ function calculator() {
             console.log(firstInput);
             break;
 
-          case "%":
-
-            break;
-
           case ".":
             let digits = runningTotal.split("")
             let found = digits.find(element => element === ".")
@@ -81,10 +77,10 @@ function calculator() {
         b = parseFloat(secondInput);
         // sets the sum to the sum of a + b
         total = a + b;
-         total = total.splice(0, 3);
+        roundedTotal = Math.round(total * 10) / 10;
 
         // updates the result with the sum
-        result.textContent = total;
+        result.textContent = roundedTotal;
 
         //sets running total to sum
         return total;
@@ -101,6 +97,7 @@ function calculator() {
         b = parseFloat(secondInput);
         // sets the sum to the sum of a + b
         total = a - b;
+        roundedTotal = Math.round(total * 10) / 10;
 
         // updates the result with the sum
         result.textContent = total;
@@ -123,7 +120,7 @@ function calculator() {
         roundedTotal = Math.round(total * 10) / 10
 
         // updates the result with the sum
-        result.textContent = total;
+        result.textContent = roundedTotal;
 
         //sets running total to sum
         return total;
@@ -141,9 +138,10 @@ function calculator() {
         b = parseFloat(secondInput);
         // sets the sum to the sum of a + b
         total = a / b;
+        roundedTotal = Math.round(total * 10) / 10;
 
         // updates the result with the sum
-        result.textContent = total;
+        result.textContent = roundedTotal;
 
         //sets running total to sum
         return total;
@@ -158,8 +156,9 @@ function calculator() {
             b = parseFloat(secondInput)
 
             total = b / a
+            roundedTotal = Math.round(total * 10) / 10;
 
-            result.textContent = total
+            result.textContent = roundedTotal
             return total
             break;
 
